@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:3000
+
+### 1. Отримати список усіх автозапчастин
+GET {{baseUrl}}/auto-parts
+
+### 2. Отримати автозапчастину за id
+GET {{baseUrl}}/auto-parts/part-002
+
+### 3. Неіснуючий id (рівень 1 повертає повідомлення, без 404)
+GET {{baseUrl}}/auto-parts/part-999
+
+### 4. Створити нову автозапчастину
+POST {{baseUrl}}/auto-parts
+Content-Type: application/json
+
+{
+  "title": "Гальмівні диски Brembo, передні",
+  "price": 2890,
+  "oemCode": "09.A417.11",
+  "condition": "new",
+  "carBrand": "Volkswagen"
+}
+
+### 5. Кореневий маршрут (перевірка, що застосунок запущено)
+GET {{baseUrl}}/
